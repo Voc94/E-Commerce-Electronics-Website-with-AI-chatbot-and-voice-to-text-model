@@ -1,0 +1,4 @@
+[GAMING_ACCESSORIES] planned products:
+  001  Sony DualSense Wireless Controller
+  002  Logitech G502 X
+  003  Razer BlackWidow V4

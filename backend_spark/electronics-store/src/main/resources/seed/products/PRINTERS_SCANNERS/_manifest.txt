@@ -1,0 +1,4 @@
+[PRINTERS_SCANNERS] planned products:
+  001  HP OfficeJet Pro 9025e
+  002  Brother HL-L2350DW
+  003  Canon imageFORMULA R10

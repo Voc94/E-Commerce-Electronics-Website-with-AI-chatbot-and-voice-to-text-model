@@ -1,0 +1,4 @@
+[PERIPHERALS_ACCESSORIES] planned products:
+  001  Logitech MX Master 3S
+  002  Keychron K2 (Hot-Swap)
+  003  Anker 7-in-1 USB-C Hub

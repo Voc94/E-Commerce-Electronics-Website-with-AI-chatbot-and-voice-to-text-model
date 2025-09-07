@@ -1,0 +1,4 @@
+[SOFTWARE] planned products:
+  001  Microsoft Windows 11 Pro
+  002  Microsoft Office 2021
+  003  Adobe Photoshop (2024)

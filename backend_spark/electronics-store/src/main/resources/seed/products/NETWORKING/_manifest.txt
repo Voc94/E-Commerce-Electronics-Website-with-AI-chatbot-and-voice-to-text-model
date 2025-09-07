@@ -1,0 +1,4 @@
+[NETWORKING] planned products:
+  001  TP-Link Archer AX55
+  002  NETGEAR Nighthawk AX5400 (RAX50)
+  003  Ubiquiti UniFi 6 Lite

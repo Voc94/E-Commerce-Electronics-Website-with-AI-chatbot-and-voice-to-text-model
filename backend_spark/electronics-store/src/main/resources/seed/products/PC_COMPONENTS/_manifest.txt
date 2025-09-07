@@ -1,0 +1,4 @@
+[PC_COMPONENTS] planned products:
+  001  NVIDIA GeForce RTX 4070
+  002  AMD Ryzen 5 7600X
+  003  Corsair Vengeance DDR5 32GB

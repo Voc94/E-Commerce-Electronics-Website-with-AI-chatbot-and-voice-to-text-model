@@ -1,0 +1,1 @@
+Artificial/src/main/resources/voice_model/stt_en_with_norm.pt filter=lfs diff=lfs merge=lfs -text

@@ -1,0 +1,4 @@
+[TABLETS] planned products:
+  001  Apple iPad Air (M2)
+  002  Samsung Galaxy Tab S9
+  003  Amazon Fire HD 10 (2023)

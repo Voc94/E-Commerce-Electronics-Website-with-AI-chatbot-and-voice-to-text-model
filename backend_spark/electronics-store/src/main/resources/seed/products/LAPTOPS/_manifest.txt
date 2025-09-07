@@ -1,0 +1,4 @@
+[LAPTOPS] planned products:
+  001  Apple MacBook Air (M3)
+  002  Dell XPS 13
+  003  Lenovo ThinkPad X1 Carbon

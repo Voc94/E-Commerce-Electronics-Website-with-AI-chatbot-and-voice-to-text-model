@@ -1,0 +1,4 @@
+[SMALL_APPLIANCES] planned products:
+  001  Instant Pot Duo 7-in-1 (5.7L)
+  002  Dyson V11 Absolute
+  003  Philips Airfryer XXL

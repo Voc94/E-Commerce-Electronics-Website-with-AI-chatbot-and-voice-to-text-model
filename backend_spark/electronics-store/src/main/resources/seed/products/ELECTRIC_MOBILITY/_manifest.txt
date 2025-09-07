@@ -1,0 +1,4 @@
+[ELECTRIC_MOBILITY] planned products:
+  001  Xiaomi Electric Scooter 4
+  002  Segway Ninebot MAX G30
+  003  NIU KQi3 Pro

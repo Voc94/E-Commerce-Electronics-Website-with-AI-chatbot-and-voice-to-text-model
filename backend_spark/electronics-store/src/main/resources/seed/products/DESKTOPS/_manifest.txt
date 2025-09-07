@@ -1,0 +1,4 @@
+[DESKTOPS] planned products:
+  001  Apple Mac mini (M2)
+  002  HP OMEN 45L
+  003  Lenovo ThinkCentre M90q

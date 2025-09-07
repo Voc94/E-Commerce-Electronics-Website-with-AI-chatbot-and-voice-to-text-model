@@ -1,0 +1,111 @@
+/* dashboard.css */
+:root {
+  --radius: 12px;
+  --shadow: 0 24px 60px -10px rgba(0, 0, 0, 0.08);
+  --bg: #f0f4f9;
+  --card-bg: #ffffff;
+  --text: #1f2d3a;
+  --muted: #6b7c93;
+  --border: #e2e8f0;
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+}
+
+.page.dashboard {
+  max-width: 960px;
+  margin: 48px auto;
+  padding: 24px 20px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.page.dashboard h2 {
+  margin: 0;
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.profile-wrapper {
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  padding: 24px 28px;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+}
+
+.profile {
+  flex: 1;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 1rem;
+}
+
+.profile p {
+  margin: 0;
+  line-height: 1.4;
+}
+
+.profile strong {
+  display: inline-block;
+  width: 100px;
+  color: #333;
+}
+
+button {
+  cursor: pointer;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  background: #6366f1;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: filter .2s ease;
+}
+
+button:hover {
+  filter: brightness(1.05);
+}
+
+.profile-wrapper > div:first-child {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+
+.avatar-wrapper {
+  position: relative;
+}
+
+.profile .info {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Profile image uploader container (if used inside dashboard) */
+.profile-wrapper .uploader {
+  width: 100%;
+}
+
+/* Responsive */
+@media (max-width: 850px) {
+  .profile-wrapper {
+    flex-direction: column;
+  }
+
+  .profile strong {
+    width: auto;
+  }
+}

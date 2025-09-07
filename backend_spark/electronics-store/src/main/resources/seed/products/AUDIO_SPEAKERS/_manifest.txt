@@ -1,0 +1,4 @@
+[AUDIO_SPEAKERS] planned products:
+  001  Sonos One (Gen 2)
+  002  JBL Charge 5
+  003  Bose SoundLink Flex

@@ -1,0 +1,50 @@
+{
+  "model_kind": "intent",
+  "arch": "mlp",
+  "hidden": 640,
+  "dropout": 0.25,
+  "representation": "transformer",
+  "transformer": "paraphrase-multilingual-MiniLM-L12-v2",
+  "hashing": false,
+  "use_bigrams": true,
+  "transform": "log1p",
+  "use_char_ngrams": true,
+  "char_nmin": 3,
+  "char_nmax": 6,
+  "char_weight": 0.9,
+  "brand_weight": 0.25,
+  "input_dim": 384,
+  "epochs": 150,
+  "lr": 0.002,
+  "batch": 128,
+  "weight_decay": 0.0004,
+  "label_smooth": 0.15,
+  "early_patience": 20,
+  "loss": "focal",
+  "min_train_per_class": 200,
+  "data_cfg": {
+    "min_token_len": 3,
+    "min_docs_per_cat": 3,
+    "max_category_share": 0.18,
+    "max_auto_per_cat": 24,
+    "max_aug_per_cat": 600,
+    "aug_min_occ": 2,
+    "aug_min_exclusivity": 0.6,
+    "aug_phrase_lengths": [
+      2,
+      4
+    ],
+    "max_help_category_per_cat": 250
+  },
+  "intent_codes": {
+    "HELP_CATEGORY": 0,
+    "HELP_LOGIN": 1,
+    "HELP_LOGOUT": 2,
+    "HELP_ADMIN": 3,
+    "HELP_REGISTER": 4,
+    "HELP_VOICE": 5,
+    "HELP_ORDER": 6,
+    "HELP_REQUEST_BRAND": 7
+  },
+  "cv_note": "CV printed earlier uses the same preset."
+}

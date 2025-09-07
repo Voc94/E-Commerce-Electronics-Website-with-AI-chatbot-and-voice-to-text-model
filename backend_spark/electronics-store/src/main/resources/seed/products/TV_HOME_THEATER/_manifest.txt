@@ -1,0 +1,4 @@
+[TV_HOME_THEATER] planned products:
+  001  LG C3 OLED
+  002  Samsung QN90C Neo QLED
+  003  Sony HT-A7000 Soundbar

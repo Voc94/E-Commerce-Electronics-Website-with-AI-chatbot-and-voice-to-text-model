@@ -1,0 +1,4 @@
+[SMART_HOME] planned products:
+  001  Google Nest Hub (2nd gen)
+  002  Amazon Echo Dot (5th gen)
+  003  Philips Hue Starter Kit (E27)

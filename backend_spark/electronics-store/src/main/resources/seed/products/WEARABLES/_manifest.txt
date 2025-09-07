@@ -1,0 +1,4 @@
+[WEARABLES] planned products:
+  001  Apple Watch Series 9
+  002  Samsung Galaxy Watch6
+  003  Garmin Forerunner 265

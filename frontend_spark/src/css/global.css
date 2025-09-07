@@ -1,0 +1,33 @@
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background: #f5f7fa;
+  margin: 0;
+}
+.page {
+  max-width: 720px;
+  margin: 40px auto;
+  padding: 16px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.08);
+}
+button {
+  cursor: pointer;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  background: #2563eb;
+  color: #fff;
+}
+input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+}
+.error {
+  background: #ffe6e6;
+  color: #a33;
+  padding: 8px;
+  border-radius: 4px;
+}

@@ -1,0 +1,154 @@
+services:
+  # ---------- Databases ----------
+  postgres-users:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: moldo
+      POSTGRES_DB: user_db
+    volumes:
+      - pg_users:/var/lib/postgresql/data
+    ports:
+      - "54320:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d user_db"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+
+  postgres-store:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: moldo
+      POSTGRES_DB: electronics_db
+    volumes:
+      - pg_store:/var/lib/postgresql/data
+    ports:
+      - "54321:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d electronics_db"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+
+  postgres-chat:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: moldo
+      POSTGRES_DB: chat_db
+    volumes:
+      - pg_chat:/var/lib/postgresql/data
+    ports:
+      - "54322:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d chat_db"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+    restart: unless-stopped
+
+  # ---------- Artificial Agents ----------
+  artificial-agents:
+    build:
+      context: ./backend_spark/Artificial
+    environment:
+      # leave empty; Dockerfile sets defaults
+      JAVA_OPTS: ""
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres-chat:5432/chat_db
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: moldo
+      SERVER_PORT: "8082"
+      AI_DJL_OFFLINE: "true"
+    ports:
+      - "8082:8082"
+    depends_on:
+      postgres-chat:
+        condition: service_healthy
+    healthcheck:
+      # We only need to know Tomcat is listening; 404 is fine.
+      test: ["CMD-SHELL", "curl -s http://localhost:8082/ > /dev/null || exit 1"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+      start_period: 10s
+    restart: unless-stopped
+
+  # ---------- Electronics Store ----------
+  electronics-store:
+    build:
+      context: ./backend_spark/electronics-store
+    environment:
+      JAVA_OPTS: ""
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres-store:5432/electronics_db
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: moldo
+      SERVER_PORT: "8081"
+      SYNC_USER_BASE_URL: http://user-management:8080
+      SYNC_SHARED_SECRET: moldo
+    ports:
+      - "8081:8081"
+    depends_on:
+      postgres-store:
+        condition: service_healthy
+      artificial-agents:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "curl -s http://localhost:8081/ > /dev/null || exit 1"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+      start_period: 10s
+    restart: unless-stopped
+
+  # ---------- User Management ----------
+  user-management:
+    build:
+      context: ./backend_spark/user_management
+    environment:
+      JAVA_OPTS: ""
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres-users:5432/user_db
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: moldo
+      SERVER_PORT: "8080"
+      SYNC_STORE_BASE_URL: http://electronics-store:8081
+      SYNC_AGENTS_BASE_URL: http://artificial-agents:8082
+      SYNC_SHARED_SECRET: moldo
+    ports:
+      - "8080:8080"
+    depends_on:
+      postgres-users:
+        condition: service_healthy
+      electronics-store:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "curl -s http://localhost:8080/ > /dev/null || exit 1"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+      start_period: 10s
+    restart: unless-stopped
+
+  # ---------- Frontend ----------
+  frontend:
+    build:
+      context: ./frontend_spark
+      args:
+        REACT_APP_USER_API_BASE: http://localhost:8080
+        REACT_APP_STORE_API_BASE: http://localhost:8081
+        REACT_APP_VOICE_API_BASE: http://localhost:8082
+        REACT_APP_NLP_API_BASE: http://localhost:8082
+    ports:
+      - "3000:80"
+    depends_on:
+      user-management:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  pg_users:
+  pg_store:
+  pg_chat:

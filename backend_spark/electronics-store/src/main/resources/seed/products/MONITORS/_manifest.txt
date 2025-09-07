@@ -1,0 +1,4 @@
+[MONITORS] planned products:
+  001  LG UltraGear 27GP850
+  002  Dell UltraSharp U2720Q
+  003  Samsung Odyssey G7 (32")

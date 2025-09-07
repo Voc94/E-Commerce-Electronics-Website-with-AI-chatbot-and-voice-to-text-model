@@ -1,0 +1,9 @@
+# Privacy Policy
+
+This app is used for personal or academic development only. We do not store, share, or process any user data beyond what's needed for OAuth login during development.
+
+No real user data is collected or persisted outside your local environment.
+
+# Data Deletion
+
+If you want to remove your data, you can clear your browser cache or contact the developer (popavasile02@yahoo.com). Data is not persisted on external servers.

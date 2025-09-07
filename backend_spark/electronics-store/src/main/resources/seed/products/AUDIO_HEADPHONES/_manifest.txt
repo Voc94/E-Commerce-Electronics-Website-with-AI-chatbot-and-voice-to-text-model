@@ -1,0 +1,4 @@
+[AUDIO_HEADPHONES] planned products:
+  001  Sony WH-1000XM5
+  002  Apple AirPods Pro (2nd gen)
+  003  Bose QuietComfort Ultra

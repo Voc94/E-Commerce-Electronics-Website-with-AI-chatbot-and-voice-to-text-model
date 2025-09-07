@@ -1,0 +1,4 @@
+[GAMING_CONSOLES] planned products:
+  001  Sony PlayStation 5
+  002  Microsoft Xbox Series X
+  003  Nintendo Switch OLED

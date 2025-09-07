@@ -1,0 +1,4 @@
+[CAMERAS] planned products:
+  001  Canon EOS R6 Mark II
+  002  Sony α7 IV
+  003  Nikon Z6 II

@@ -1,0 +1,4 @@
+[SMARTPHONES] planned products:
+  001  Apple iPhone 15
+  002  Samsung Galaxy S24
+  003  Google Pixel 8
