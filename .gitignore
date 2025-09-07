@@ -1,0 +1,10 @@
+
+backend_spark/Artificial/src/main/resources/voice_model/stt_en_with_norm.pt
+
+# Ignore large binaries
+backend_spark/Artificial/src/main/resources/voice_model.rar
+
+backend_spark/electronics-store/src/main/resources/seed/products/WEARABLES/003/scoped_dir19112_1663277153/Docker Desktop Installer.exe
+
+*.rar
+*.exe
