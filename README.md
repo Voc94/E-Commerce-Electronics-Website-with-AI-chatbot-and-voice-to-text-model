@@ -7,11 +7,12 @@ A full-stack demo store for electronics with:
 
 ![Homepage](./user_manual_homepage.png)
 
+---
 
 ## 🚀 Quick Start
 
 ### Option A — Docker (easiest)
-```bash
+
 docker compose up -d
 Then open: http://localhost:3000
 
@@ -23,6 +24,7 @@ Then open: http://localhost:3000
 
 ![Homepage](./user_manual_homepage.png)
 
+---
 
 ### **2. Search Products (Text & Voice)**
 
@@ -37,6 +39,7 @@ Steps:
 2. Press **Start** and speak your query.  
 3. Click **Stop & Use** to perform the search.
 
+---
 
 ### **3. AI Support Chatbot**
 ![Support Chat](./user_manual_chat_indications.png)
@@ -47,3 +50,4 @@ Steps:
   - “Where can I find a PlayStation?”
 - The bot gives instant answers and clickable action buttons.
 
+---
